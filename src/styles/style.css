@@ -2,24 +2,27 @@
     background: #E55D87;
     background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);
     background: linear-gradient(to right, #5FC3E4, #E55D87);
-    padding: 1vh 0vh 1vh 1vh;
+    padding: 2vh 0vh 2vh 1vh;
 }
 
 .ps-chat-message {
-    padding: 1rem 0.5rem 1rem 1rem;
-    margin: 1rem 0rem 1rem 1rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
     border-radius: 25px;
     box-shadow: 0 0 3px #B2B2B2;
+    align-items: center;
+    max-width: 70vw;
 }
 
 .ps-chat-sent {
     background: #5FC3E4;
-    /* margin-left: 15%; */
-    margin-right: 1rem;
-    /* display: inline-flex; */
 }
 
 .ps-chat-received{
     background: #E55D87;
-    margin-left: 1rem;
+}
+
+.ps-chat-footer {
+    background: #ffffff;
+    box-shadow: 0 -2px 3px #B2B2B2;
 }

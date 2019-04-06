@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rebass/grid": "^6.0.0",
     "antd": "^3.16.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

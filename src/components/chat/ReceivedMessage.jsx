@@ -1,11 +1,12 @@
 import React from 'react';
+import { Box } from '@rebass/grid'
 
 export default function ReceivedMessage({ conversation }) {
     return (
-        <div className="ps-chat-message ps-chat-received">
-            <div>
-                {conversation.message}
+        <Box alignSelf="flex-end">
+            <div className="ps-chat-message ps-chat-received">
+                <p>{conversation.message}</p>
             </div>
-        </div>
+        </Box>
     )
 }
