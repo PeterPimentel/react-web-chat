@@ -31,7 +31,7 @@ class Footer extends React.Component {
                         <Flex flexDirection={"row"}>
                             <Box width={11 / 12} alignSelf="flex-start">
                                 {getFieldDecorator("message")(
-                                    <Input placeholder="Write a message..." />
+                                    <Input autoComplete="off" placeholder="Write a message..." />
                                 )}
                             </Box>
                             <Box width={1 / 12} alignSelf="flex-end">

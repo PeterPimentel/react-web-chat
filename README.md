@@ -1,25 +1,20 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Microsoft/BotFramework-WebChat/master/doc/abs-logo.png" alt="Azure Bot Services logo" width="240" />
+    <img src="./docs/images/react-chat-icon.png" alt="React chat logo" width="240" />
+    <a href="http://www.freepik.com">Designed by Starline / Freepik</a>
 </p>
 
 <p align="center">A fully-customizable web-based client for Chat Bots.</p>
 
-## Available Scripts
+## How to use
+First, install all depencys by the command `npm install`. 
 
-In the project directory, you can run:
+Then runs the app in the development mode .<br>
 
-### `npm start`
-
-Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Run the server with `npm star`.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inside the `src/components/ChatContainer/Data.js` has the list of messages.
 
 ### `npm run build`
 
@@ -30,3 +25,6 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Custom colors
+In the `src/styles/style.css` you can customize the colors of your chat.

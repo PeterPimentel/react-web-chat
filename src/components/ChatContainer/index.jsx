@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SentMessage from '../chat/SentMessage';
 import ReceivedMessage from '../chat/ReceivedMessage';
-import {Flex} from '@rebass/grid'
+import { Flex } from '@rebass/grid'
 
 function ChatContainer(props) {
     const { conversation } = props;
@@ -12,8 +12,8 @@ function ChatContainer(props) {
                 {conversation.map((conv, index) => {
                     return (
                         conv.type === 'sent' ?
-                        <SentMessage key={index} conversation={conv} /> :
-                        <ReceivedMessage key={index} conversation={conv} />
+                            <SentMessage key={index} conversation={conv} /> :
+                            <ReceivedMessage key={index} conversation={conv} />
                     )
                 })}
             </Flex>

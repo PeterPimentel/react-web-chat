@@ -89,6 +89,10 @@
     font-size: 1rem;
 }
 
+.ps-chat-container > div:last-child{
+    margin-bottom: 10vh;
+}
+
 @media (max-width: 300px) 
 {
     .ps-username-name{
