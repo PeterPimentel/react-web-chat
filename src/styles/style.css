@@ -31,13 +31,31 @@
 .ps-chat-footer-button{
     display: flex;
     justify-content: flex-end;
-    /* cursor: pointer; */
+    
+}
 
+.ps-transparent-button{
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     overflow: hidden;
-    outline:none;
+    outline:none;   
+}
+
+.ps-transparent-button::after{
+    background-color: transparent;
+}
+
+.ps-transparent-button:hover{
+    background-color: transparent;
+}
+
+.ps-transparent-button:active{
+    background-color: transparent;
+}
+
+.ps-force-justify-end{
+    justify-content: flex-end !important;
 }
 
 .ps-chat-footer input{
@@ -48,4 +66,15 @@
     outline: none;
     border-color: #ffffff !important;
     box-shadow: 0 0 0 0px rgba(24, 144, 255, 0);
+}
+
+.ps-username-name{
+    padding-left: 0.5rem;
+}
+
+@media (max-width: 300px) 
+{
+    .ps-username-name{
+        padding-left: 2rem;
+    }
 }

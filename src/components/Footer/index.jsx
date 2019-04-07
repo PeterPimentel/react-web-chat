@@ -1,6 +1,6 @@
 import React from 'react';
 import {Affix, Form, Button, Input} from 'antd';
-import {Flex, Box} from '@rebass/grid'
+import {Flex, Box} from '@rebass/grid';
 
 class Footer extends React.Component {
 
@@ -22,11 +22,11 @@ class Footer extends React.Component {
                         <Flex flexDirection={"row"}>
                             <Box width={11/12} alignSelf="flex-start">
                                 {getFieldDecorator("message")(
-                                    <Input placeholder="Write a message..." />
+                                    <Input placeholder="Write a message..."/>
                                 )}
                             </Box>
                             <Box width={1/12} alignSelf="flex-end">
-                                <Button htmlType="submit" className="ps-chat-footer-button" icon="arrow-right"></Button>
+                                <Button htmlType="submit" className="ps-transparent-button ps-chat-footer-button" icon="arrow-right"></Button>
                             </Box>
                         </Flex>
                     </Form>
