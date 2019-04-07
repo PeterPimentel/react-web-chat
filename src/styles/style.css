@@ -31,7 +31,6 @@
 .ps-chat-footer-button{
     display: flex;
     justify-content: flex-end;
-    
 }
 
 .ps-transparent-button{
@@ -70,6 +69,11 @@
 
 .ps-username-name{
     padding-left: 0.5rem;
+    color: white;
+    font-size: 1rem;
+}
+.ps-chat-container{
+    /* min-height: 80vh; */
 }
 
 @media (max-width: 300px) 

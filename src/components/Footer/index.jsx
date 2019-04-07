@@ -1,4 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {sendMessage} from '../../reducers/messageReducer';
 import {Affix, Form, Button, Input} from 'antd';
 import {Flex, Box} from '@rebass/grid';
 
@@ -6,9 +9,16 @@ class Footer extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFields((err, value) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            console.log('Received values of form: ', value);
+            const message = {
+                type: 'sent',
+                message: value.message,
+                sentAt: '3:08:35 PM',
+            }
+            this.props.sendMessage(message)
+            this.props.form.resetFields();
           }
         });
     }
@@ -37,4 +47,7 @@ class Footer extends React.Component {
 }
 
 const FooterForm = Form.create()(Footer);
-export default FooterForm;
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({ sendMessage }, dispatch);
+export default connect(null, mapDispatchToProps)(FooterForm);
