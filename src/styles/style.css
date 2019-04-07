@@ -26,9 +26,14 @@
     background: #ffffff;
     box-shadow: 0 -2px 1px rgba(220,220,220,0.5);
     padding: 1vh 0vw 1vh 3vw;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
 }
 
-.ps-chat-footer-button{
+.ps-footer-button{
     display: flex;
     justify-content: flex-end;
 }
@@ -72,13 +77,17 @@
     color: white;
     font-size: 1rem;
 }
-.ps-chat-container{
-    /* min-height: 80vh; */
-}
 
 @media (max-width: 300px) 
 {
     .ps-username-name{
         padding-left: 2rem;
+    }
+}
+
+@media (min-width: 800px) 
+{
+    button.ps-footer-button{
+        padding-left: 3.5vw !important;
     }
 }
