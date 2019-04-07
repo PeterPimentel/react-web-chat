@@ -5,7 +5,7 @@ export default function ReceivedMessage({ conversation }) {
     return (
         <Box alignSelf="flex-end">
             <div className="ps-chat-message ps-chat-received">
-                <p>{conversation.message}</p>
+                <span>{conversation.message}</span>
             </div>
         </Box>
     )

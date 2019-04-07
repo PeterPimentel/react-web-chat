@@ -24,5 +24,28 @@
 
 .ps-chat-footer {
     background: #ffffff;
-    box-shadow: 0 -2px 3px #B2B2B2;
+    box-shadow: 0 -2px 1px rgba(220,220,220,0.5);
+    padding: 1vh 0vw 1vh 3vw;
+}
+
+.ps-chat-footer-button{
+    display: flex;
+    justify-content: flex-end;
+    /* cursor: pointer; */
+
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    outline:none;
+}
+
+.ps-chat-footer input{
+    border: 0px;
+}
+
+.ps-chat-footer input:focus{
+    outline: none;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 0px rgba(24, 144, 255, 0);
 }
