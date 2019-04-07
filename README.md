@@ -1,7 +1,7 @@
 <p align="center">
     <img src="./docs/images/react-chat-icon.png" alt="React chat logo" width="240" />
 </p>
-<a align="center" href="http://www.freepik.com">Designed by Starline / Freepik</a>
+<p align="center"><a href="http://www.freepik.com">Designed by Starline / Freepik</a></p>
 
 <p align="center">A fully-customizable web-based client for Chat Bots.</p>
 
