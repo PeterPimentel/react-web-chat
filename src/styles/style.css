@@ -14,12 +14,23 @@
     max-width: 70vw;
 }
 
+.ps-chat-image-message {
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    align-items: center;
+}
+
+.ps-chat-image-message img{
+    width: 35vw;
+}
+
 .ps-chat-sent {
     background: #5FC3E4;
 }
 
 .ps-chat-received{
     background: #E55D87;
+    color: #ffffff;
 }
 
 .ps-chat-footer {

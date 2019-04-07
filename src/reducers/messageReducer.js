@@ -1,3 +1,4 @@
+import DATA from '../components/ChatContainer/Data'
 // Action Types
 export const Types = {
     SEND_MESSAGE: 'SEND_MESSAGE'
@@ -5,7 +6,7 @@ export const Types = {
 
 // Reducer
 const initialState = {
-    conversation: []
+    conversation: DATA
 };
 
 export default function messageReducer(state = initialState, action) {
