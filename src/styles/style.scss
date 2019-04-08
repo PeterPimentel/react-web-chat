@@ -1,17 +1,17 @@
+@import './theme';
+
 .ps-chat-header {
-    background: #E55D87;
-    background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);
-    background: linear-gradient(to right, #5FC3E4, #E55D87);
+    background: $primary-color;
     padding: 2vh 0vh 2vh 1vh;
 }
 
 .ps-chat-message {
     padding: 0.2rem 1rem 0.2rem 1rem;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
-    border-radius: 25px;
     box-shadow: 0 0 3px #B2B2B2;
     align-items: center;
     max-width: 70vw;
+    font-weight: 500;
 }
 
 .ps-chat-image-message {
@@ -25,12 +25,15 @@
 }
 
 .ps-chat-sent {
-    background: #5FC3E4;
+    background: $primary-color;
+    color: $primary-font-color;
+    border-radius: 20px 0px 20px 20px;
 }
 
 .ps-chat-received{
-    background: #E55D87;
-    color: #ffffff;
+    background: $secondary-color;
+    color: $secondary-font-color;
+    border-radius: 0px 20px 20px 20px;
 }
 
 .ps-chat-footer {
@@ -87,6 +90,10 @@
     padding-left: 0.5rem;
     color: white;
     font-size: 1rem;
+}
+
+.ps-chat-container{
+    background: $chat-background;
 }
 
 .ps-chat-container > div:last-child{

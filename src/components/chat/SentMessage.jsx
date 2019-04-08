@@ -8,7 +8,7 @@ export default function SentMessage({ conversation }) {
         <Box alignSelf="flex-end">
             {conversation.image ?
                 <ImageMessage conversation={conversation}/>: 
-                <TextMessage conversation={conversation} type={'ps-chat-sent'}/>
+                <TextMessage conversation={conversation}/>
             }
         </Box>
     )
