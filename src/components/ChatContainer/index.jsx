@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SentMessage from '../chat/SentMessage';
-import ReceivedMessage from '../chat/ReceivedMessage';
+import Message from '../chat/Message';
 import { Flex } from '@rebass/grid';
 
 function ChatContainer(props) {
@@ -11,9 +10,7 @@ function ChatContainer(props) {
             <Flex flexDirection={"column"}>
                 {conversation.map((conv, index) => {
                     return (
-                        conv.type === 'sent' ?
-                            <SentMessage key={index} conversation={conv} /> :
-                            <ReceivedMessage key={index} conversation={conv} />
+                        <Message key={index} conversation={conv}/>
                     )
                 })}
             </Flex>

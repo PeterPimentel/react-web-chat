@@ -12,7 +12,7 @@ class Footer extends React.Component {
             if (!err) {
                 console.log('Received values of form: ', value);
                 const message = {
-                    type: 'sent',
+                    from: 'me',
                     message: value.message,
                     sentAt: '3:08:35 PM',
                 }
