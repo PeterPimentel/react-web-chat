@@ -97,7 +97,11 @@
 }
 
 .ps-chat-container > div:last-child{
-    margin-bottom: 10vh;
+    padding-bottom: 10vh;
+}
+
+body {
+    // overflow-y: hidden;
 }
 
 @media (max-width: 300px) 
