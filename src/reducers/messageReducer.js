@@ -24,7 +24,7 @@ export default function messageReducer(state = initialState, action) {
 // Action Creators
 export function sendMessage(message) {
     return {
-      type: Types.SEND_MESSAGE,
-      payload: message
+        type: Types.SEND_MESSAGE,
+        payload: message
     }
-  }
+}

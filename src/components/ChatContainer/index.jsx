@@ -1,9 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Message from '../chat/Message';
-import { Flex } from '@rebass/grid';
+import { Flex, Box } from '@rebass/grid';
+import { Button } from 'antd';
+import { sendMessage } from '../../reducers/messageReducer';
+import {convertMessage} from '../../utils/messageUtil';
 
 function ChatContainer(props) {
+    
+    function selectOption(value){
+        props.sendMessage(convertMessage('me',value))
+    }
+
     const { conversation } = props;
     return (
         <div className="ps-chat-container">
@@ -13,6 +22,11 @@ function ChatContainer(props) {
                         <Message key={index} conversation={conv}/>
                     )
                 })}
+                <Box className="ps-message-options" alignSelf="center">
+                    <Button onClick={()=>{selectOption("Olá")}}>Olá</Button>
+                    <Button>Teste</Button>
+                    <Button>Teste</Button>
+                </Box>
             </Flex>
         </div>
     )
@@ -21,4 +35,5 @@ function ChatContainer(props) {
 const mapStateToProps = store => ({
     conversation: store.messageReducer.conversation
 });
-export default connect(mapStateToProps)(ChatContainer);
+const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage }, dispatch);
+export default connect(mapStateToProps,mapDispatchToProps)(ChatContainer);

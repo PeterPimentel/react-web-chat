@@ -10,7 +10,6 @@ class Footer extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, value) => {
             if (!err) {
-                console.log('Received values of form: ', value);
                 const message = {
                     from: 'me',
                     message: value.message,
@@ -29,12 +28,12 @@ class Footer extends React.Component {
                 <div className="ps-chat-footer">
                     <Form layout="inline" onSubmit={this.handleSubmit}>
                         <Flex flexDirection={"row"}>
-                            <Box width={11 / 12} alignSelf="flex-start">
+                            <Box width="90vw" alignSelf="flex-start">
                                 {getFieldDecorator("message")(
                                     <Input autoComplete="off" placeholder="Write a message..." />
                                 )}
                             </Box>
-                            <Box width={1 / 12} alignSelf="flex-end">
+                            <Box width="10vw" alignSelf="flex-end">
                                 <Button htmlType="submit" className="ps-transparent-button ps-footer-button" icon="arrow-right"></Button>
                             </Box>
                         </Flex>
@@ -46,6 +45,5 @@ class Footer extends React.Component {
 }
 const FooterForm = Form.create()(Footer);
 
-const mapDispatchToProps = dispatch =>
-    bindActionCreators({ sendMessage }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage }, dispatch);
 export default connect(null, mapDispatchToProps)(FooterForm);
