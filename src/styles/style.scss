@@ -72,6 +72,14 @@
         border-color: #ffffff;
         background-color: $primary-color;
     }
+
+    input:checked{
+        & + button{
+            background-color: red;
+            transform: scale(1);
+            transition: opacity 1s ease-in-out;
+        }
+    }
 }
 // END - Message e ChatConatiner
 

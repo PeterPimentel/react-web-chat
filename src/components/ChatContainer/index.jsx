@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Message from '../chat/Message';
-import { Flex, Box } from '@rebass/grid';
-import { Button } from 'antd';
+import OptionButtons from '../chat/OptionButtons';
+import { Flex } from '@rebass/grid';
 import { sendMessage } from '../../reducers/messageReducer';
 import {convertMessage} from '../../utils/messageUtil';
 
@@ -22,11 +22,7 @@ function ChatContainer(props) {
                         <Message key={index} conversation={conv}/>
                     )
                 })}
-                <Box className="ps-message-options" alignSelf="center">
-                    <Button onClick={()=>{selectOption("Olá")}}>Olá</Button>
-                    <Button>Teste</Button>
-                    <Button>Teste</Button>
-                </Box>
+                <OptionButtons send={selectOption}/>
             </Flex>
         </div>
     )
