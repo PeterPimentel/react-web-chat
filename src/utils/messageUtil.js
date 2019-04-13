@@ -1,7 +1,11 @@
-export function convertMessage(from,value){
-    return{
-        from,
+import nanoid from 'nanoid';
+
+export function normalizeMessage(value) {
+    return {
+        from: 'me',
         message: value,
-        sentAt: '3:08:35 PM'
+        sentAt: new Date(),
+        id: nanoid(),
+        type: 'text'
     }
 }

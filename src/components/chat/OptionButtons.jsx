@@ -2,21 +2,21 @@ import React from 'react';
 import { Button } from 'antd';
 
 export default function OptionButtons({ send, conversation }) {
-    const options = [
-        {
-            text:"Texto 1",
-            value: "1"
-        },
-        {
-            text:"Texto 2",
-            value: "2"
-        },
-        {
-            text:"Texto 3",
-            value: "3"
-        }
+    // const options = [
+    //     {
+    //         text:"Texto 1",
+    //         value: "1"
+    //     },
+    //     {
+    //         text:"Texto 2",
+    //         value: "2"
+    //     },
+    //     {
+    //         text:"Texto 3",
+    //         value: "3"
+    //     }
 
-    ]
+    // ]
     return (
         <div className="ps-message-options" style={{alignSelf:"center"}}>
             <label htmlFor="option-1">CLK</label>

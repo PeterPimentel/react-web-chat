@@ -28,10 +28,23 @@
     padding: 0.2rem 1rem 0.2rem 1rem;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
     align-items: center;
+
+    img{
+        width: 35vw;
+    }
 }
 
-.ps-image-message img{
-    width: 35vw;
+.ps-li-message {
+    max-width: 50vw;
+    background-color: $secondary-color;
+    border-radius: 20px 20px 20px 20px;
+    cursor: pointer;
+    border: 1px solid $primary-color;
+    display: inline-block;
+
+    &:hover{
+        background-color: rgba($primary-color, 0.5)
+    }
 }
 
 .ps-message-sent {
@@ -82,7 +95,7 @@
     }
     button:hover {
         color: $primary-font-color;
-        border-color: #ffffff;
+        border-color: $secondary-color;
         background-color: $primary-color;
     }
 

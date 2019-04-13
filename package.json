@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.16.1",
+    "nanoid": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.6",
     "react-custom-scrollbars": "^4.2.1",

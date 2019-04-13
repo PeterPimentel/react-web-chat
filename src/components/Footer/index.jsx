@@ -3,18 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../reducers/messageReducer';
 import { Affix, Form, Button, Input} from 'antd';
+import {normalizeMessage} from '../../utils/messageUtil';
 
 class Footer extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, value) => {
             if (!err) {
-                const message = {
-                    from: 'me',
-                    message: value.message,
-                    sentAt: '3:08:35 PM',
-                }
-                this.props.sendMessage(message)
+                this.props.sendMessage(normalizeMessage(value.message))
                 this.props.form.resetFields();
             }
         });
