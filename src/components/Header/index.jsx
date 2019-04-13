@@ -4,6 +4,7 @@ import { Flex, Box } from '@rebass/grid';
 
 export default function Header() {
     return (
+
         <div className="ps-chat-header">
             <Flex flexDirection={"row"} alignItems="center">
                 <Box width="10vw">

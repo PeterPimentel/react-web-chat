@@ -3,11 +3,6 @@
 .ps-chat-header {
     background: $primary-color;
     padding: 2vh 0vh 2vh 1vh;
-    //Temporario
-    position:fixed;
-    top:0px;
-    left:0px;
-    right:0px;
 }
 
 .ps-bot-name{
@@ -54,7 +49,7 @@
 }
 
 .ps-chat-container > div:last-child{
-    padding-bottom: 10vh;
+    padding-bottom: 5vh;
 }
 
 .ps-message-options{
