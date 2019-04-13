@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box } from '@rebass/grid';
 import { Button } from 'antd';
 
 export default function OptionButtons({ send, conversation }) {
@@ -19,7 +18,7 @@ export default function OptionButtons({ send, conversation }) {
 
     ]
     return (
-        <Box className="ps-message-options" alignSelf="center">
+        <div className="ps-message-options" style={{alignSelf:"center"}}>
             <label htmlFor="option-1">CLK</label>
             <input type="radio" name="radio-buttons" id="option-1" style={{display:"none"}} />
             <Button onClick={() => { send("Olá") }}>Olá</Button>
@@ -42,6 +41,6 @@ export default function OptionButtons({ send, conversation }) {
                     )
                 })
             } */}
-        </Box>
+        </div>
     )
 }
