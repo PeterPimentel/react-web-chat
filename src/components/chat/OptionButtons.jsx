@@ -20,7 +20,7 @@ export default function OptionButtons({ send, conversation }) {
     ]
     return (
         <Box className="ps-message-options" alignSelf="center">
-            {/* <label htmlFor="option-1">CLK</label>
+            <label htmlFor="option-1">CLK</label>
             <input type="radio" name="radio-buttons" id="option-1" style={{display:"none"}} />
             <Button onClick={() => { send("Olá") }}>Olá</Button>
             
@@ -30,8 +30,8 @@ export default function OptionButtons({ send, conversation }) {
             
             <label htmlFor="option-3">CLK 2</label>
             <input type="radio" name="radio-buttons" id="option-3" style={{display:"none"}} />            
-            <Button>Teste</Button> */}
-            {
+            <Button>Teste</Button>
+            {/* {
                 options.map((option,index) =>{
                     return(
                         <>
@@ -41,7 +41,7 @@ export default function OptionButtons({ send, conversation }) {
                         </>
                     )
                 })
-            }
+            } */}
         </Box>
     )
 }

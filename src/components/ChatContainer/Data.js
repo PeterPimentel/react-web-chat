@@ -3,6 +3,7 @@ export default [
     'from': 'me',
     'message': 'It is a long established fact',
     'sentAt': '3:08:35 PM',
+    'type': 'text'
   }, {
     'from': 'bot',
     'message': 'I must explain to you how all this mistaken idea of denouncing ',

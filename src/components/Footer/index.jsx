@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../reducers/messageReducer';
 import { Affix, Form, Button, Input} from 'antd';
-import { Flex, Box } from '@rebass/grid';
 
 class Footer extends React.Component {
     handleSubmit = (e) => {
@@ -27,16 +26,16 @@ class Footer extends React.Component {
             <Affix offsetBottom={0}>
                 <div className="ps-chat-footer">
                     <Form layout="inline" onSubmit={this.handleSubmit}>
-                        <Flex flexDirection={"row"}>
-                            <Box width="90vw" alignSelf="flex-start">
+                        <div style={{display:'flex', alignItems:'center'}}>
+                            <div style={{ width: '90vw' }}>
                                 {getFieldDecorator("message")(
                                     <Input autoComplete="off" placeholder="Write a message..." />
                                 )}
-                            </Box>
-                            <Box width="10vw" alignSelf="flex-end">
+                            </div>
+                            <div style={{ width: '10vw' }}>
                                 <Button htmlType="submit" className="ps-transparent-button ps-footer-button" icon="arrow-right"></Button>
-                            </Box>
-                        </Flex>
+                            </div>
+                        </div>
                     </Form>
                 </div>
             </Affix>

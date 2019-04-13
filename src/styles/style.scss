@@ -3,6 +3,8 @@
 .ps-chat-header {
     background: $primary-color;
     padding: 2vh 0vh 2vh 1vh;
+    display: flex;
+    align-items: center;
 }
 
 .ps-bot-name{
@@ -46,6 +48,8 @@
 
 .ps-chat-container{
     background: $chat-background;
+    display: flex;
+    flex-direction: column;
 }
 
 .ps-chat-container > div:last-child{
