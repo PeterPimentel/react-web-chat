@@ -20,12 +20,11 @@ function ListMessage (props) {
                 {
                     props.conversation.options.map((option,idx)=>{
                         return(
-                            <li className={`ps-message ps-li-message ${animation}`} key={'list-itn'+idx}>
-                                <div onClick={
-                                    ()=>{props.sendMessage(normalizeMessage(option.value,props.messageContext))
-                                }}>
-                                    {option.text}
-                                </div>
+                            <li className={`ps-message ps-li-message ${animation}`} key={'list-itn'+idx}
+                                onClick={
+                                    ()=>{props.sendMessage(normalizeMessage(option.value,props.messageContext))}
+                            }>
+                                {option.text}
                             </li>
                         )
                     })
