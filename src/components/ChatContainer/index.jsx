@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-import Message from '../chat/Message';
+import Message from '../Message';
 
 function ChatContainer(props) {
     const { conversation } = props;
