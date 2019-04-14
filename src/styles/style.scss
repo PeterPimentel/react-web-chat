@@ -41,6 +41,7 @@
     cursor: pointer;
     border: 1px solid $primary-color;
     display: inline-block;
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
 
     &:hover{
         background-color: rgba($primary-color, 0.5)

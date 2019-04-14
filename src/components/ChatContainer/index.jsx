@@ -5,7 +5,7 @@ import Message from '../chat/Message';
 function ChatContainer(props) {
     const { conversation } = props;
     const scrollbar = useRef(null)
-    
+
     useEffect(() => {
         if (scrollbar)
             scrollbar.current.scrollTop = scrollbar.current.scrollHeight;

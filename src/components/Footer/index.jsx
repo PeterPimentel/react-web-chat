@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../reducers/messageReducer';
-import { Affix, Form, Button, Input} from 'antd';
-import {normalizeMessage} from '../../utils/messageUtil';
+import { Affix, Form, Button, Input } from 'antd';
+import { normalizeMessage } from '../../utils/messageUtil';
 
 class Footer extends React.Component {
     handleSubmit = (e) => {
@@ -22,9 +22,11 @@ class Footer extends React.Component {
             <Affix offsetBottom={0}>
                 <div className="ps-chat-footer">
                     <Form layout="inline" onSubmit={this.handleSubmit}>
-                        <div style={{display:'flex', alignItems:'center'}}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
                             <div style={{ width: '90vw' }}>
-                                {getFieldDecorator("message")(
+                                {getFieldDecorator("message", {
+                                    rules: [{ required: true}],
+                                })(
                                     <Input autoComplete="off" placeholder="Write a message..." />
                                 )}
                             </div>
