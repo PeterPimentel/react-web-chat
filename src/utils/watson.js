@@ -26,6 +26,14 @@ export function normalizeInput(response) {
 					sentAt: new Date(),
 					id: nanoid()
 				}
+			case 'image':
+				return {
+					from: 'bot',
+					type: 'image',
+					message: msg.source,
+					sentAt: new Date(),
+					id: nanoid()
+				}
 			default:
 				return {
 					from: 'bot',
@@ -40,8 +48,8 @@ export function normalizeInput(response) {
 
 export function normalizeOutput(message) {
 	return {
-		context:message[0].context,
-		input:{
+		context: message[0].context,
+		input: {
 			text: message[0].message
 		}
 	}

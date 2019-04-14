@@ -6,6 +6,11 @@ import { Affix, Form, Button, Input } from 'antd';
 import { normalizeMessage } from '../../utils/messageUtil';
 
 class Footer extends React.Component {
+    constructor(){
+        super()
+        this.state = {inputDisabled:false};
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, value) => {
