@@ -42,6 +42,7 @@
     border: 1px solid $primary-color;
     display: inline-block;
     margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+    color: $secondary-font-color;
 
     &:hover{
         background-color: rgba($primary-color, 0.5)
@@ -82,31 +83,6 @@
 
 .ps-chat-container > div:last-child{
     padding-bottom: 5vh;
-}
-
-.ps-message-options{
-    button{
-        margin-right: 3vw;
-        border-color: $primary-color;
-        color: $primary-color;
-        border-radius: 20px;
-    }
-    button:last-child{
-        margin-right: 0vw;
-    }
-    button:hover {
-        color: $primary-font-color;
-        border-color: $secondary-color;
-        background-color: $primary-color;
-    }
-
-    input:checked{
-        & + button{
-            background-color: red;
-            transform: scale(1);
-            transition: opacity 1s ease-in-out;
-        }
-    }
 }
 // END - Message e ChatConatiner
 
