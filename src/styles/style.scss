@@ -22,6 +22,10 @@
     align-items: center;
     max-width: 70vw;
     font-weight: 500;
+
+    a{
+        color: $primary-color;
+    }
 }
 
 .ps-image-message {

@@ -1,5 +1,6 @@
 import React from 'react';
 import {MESSAGE_ANIMATION} from '../../config/uiSettings';
+import Linkify from 'linkifyjs/react';
 
 export default function TextMessage({conversation}) {
     let animation = '';
@@ -15,7 +16,7 @@ export default function TextMessage({conversation}) {
     }
     return (
         <div className={`ps-message ${from} ${animation}`}>
-            <span>{conversation.message}</span>
+            <Linkify>{conversation.message}</Linkify>
         </div>
     )
 }
