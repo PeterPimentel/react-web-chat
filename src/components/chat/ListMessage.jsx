@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { sendMessage } from '../../reducers/messageReducer';
+import { sendMessage } from '../../redux/reducers/messageReducer';
 import {normalizeMessage} from '../../utils/messageUtil';
 
 function ListMessage (props) {
@@ -15,7 +15,7 @@ function ListMessage (props) {
                     props.conversation.options.map((option,idx)=>{
                         return(
                             <li className='ps-message ps-li-message' key={'list-itn'+idx}>                            
-                                <div onClick={()=>{props.sendMessage(normalizeMessage(option.value))}}>
+                                <div onClick={()=>{props.sendMessage(normalizeMessage(option.value,props.messageContext))}}>
                                     {option.text}
                                 </div>
                             </li>
@@ -27,4 +27,7 @@ function ListMessage (props) {
     )
 }
 const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage }, dispatch);
-export default connect(null, mapDispatchToProps)(ListMessage);
+const mapStateToProps = store => ({
+    messageContext: store.messageReducer.context
+});
+export default connect(mapStateToProps, mapDispatchToProps)(ListMessage);

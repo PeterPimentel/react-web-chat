@@ -1,4 +1,7 @@
-export default function normalize(response) {
+import nanoid from 'nanoid';
+
+//This normalize is from Watson Assistant Version >= 2019-02-01
+export function normalizeInput(response) {
 	return response.output.generic.map(msg => {
 		switch (msg.response_type) {
 			case 'text':
@@ -6,7 +9,8 @@ export default function normalize(response) {
 					from: 'bot',
 					type: 'text',
 					message: msg.text,
-					sentAt: new Date()
+					sentAt: new Date(),
+					id: nanoid()
 				}
 			case 'option':
 				return {
@@ -19,15 +23,26 @@ export default function normalize(response) {
 							value: option.value.input.text
 						}
 					}),
-					sentAt: new Date()
+					sentAt: new Date(),
+					id: nanoid()
 				}
 			default:
 				return {
 					from: 'bot',
 					type: 'text',
 					message: msg.text,
-					sentAt: new Date()
+					sentAt: new Date(),
+					id: nanoid()
 				}
 		}
 	});
+}
+
+export function normalizeOutput(message) {
+	return {
+		context:message[0].context,
+		input:{
+			text: message[0].message
+		}
+	}
 }

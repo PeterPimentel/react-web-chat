@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { sendMessage } from '../../reducers/messageReducer';
+import { sendMessage } from '../../redux/reducers/messageReducer';
 import { Affix, Form, Button, Input } from 'antd';
 import { normalizeMessage } from '../../utils/messageUtil';
 
@@ -10,7 +10,7 @@ class Footer extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, value) => {
             if (!err) {
-                this.props.sendMessage(normalizeMessage(value.message))
+                this.props.sendMessage(normalizeMessage(value.message,this.props.messageContext))
                 this.props.form.resetFields();
             }
         });
@@ -42,5 +42,8 @@ class Footer extends React.Component {
 }
 const FooterForm = Form.create()(Footer);
 
+const mapStateToProps = store => ({
+    messageContext: store.messageReducer.context
+});
 const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage }, dispatch);
-export default connect(null, mapDispatchToProps)(FooterForm);
+export default connect(mapStateToProps, mapDispatchToProps)(FooterForm);

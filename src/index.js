@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import "./styles/style.scss";
 import App from './App';
 import { Provider } from 'react-redux';
-import { Store } from './store';
+import { Store } from './redux/store';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
