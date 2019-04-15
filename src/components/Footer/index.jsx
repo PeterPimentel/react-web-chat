@@ -35,8 +35,8 @@ class Footer extends React.Component {
                                     <Input autoComplete="off" placeholder="Write a message..." />
                                 )}
                             </div>
-                            <div style={{ width: '10vw' }}>
-                                <Button htmlType="submit" className="ps-transparent-button ps-footer-button" icon="arrow-right"></Button>
+                            <div style={{width: '10vw', display:'flex', justifyContent:'center'}}>
+                                <Button htmlType="submit" shape="circle" className="ps-transparent-button" icon="arrow-right"></Button>
                             </div>
                         </div>
                     </Form>
