@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../redux/reducers/messageReducer';
 import { Affix, Form, Button, Input } from 'antd';
-import { normalizeMessage } from '../../utils/messageUtil';
 
 class Footer extends React.Component {
 
@@ -11,7 +10,7 @@ class Footer extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, value) => {
             if (!err) {
-                this.props.sendMessage(normalizeMessage(value.message,this.props.messageContext))
+                this.props.sendMessage(value.message,this.props.messageContext)
                 this.props.form.resetFields();
             }
         });
