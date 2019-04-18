@@ -7,7 +7,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Router>
-					<Route path="/chat" component={Chat} />
+					<Route path="/" component={Chat} />
 				</Router>
 			</div>
 		);

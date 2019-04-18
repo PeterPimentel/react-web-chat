@@ -6,10 +6,6 @@ import { Affix, Form, Button, Input } from 'antd';
 import { normalizeMessage } from '../../utils/messageUtil';
 
 class Footer extends React.Component {
-    constructor(){
-        super()
-        this.state = {inputDisabled:false};
-    }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -25,6 +21,7 @@ class Footer extends React.Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <Affix offsetBottom={0}>
+                <span>Digitando...</span>
                 <div className="ps-chat-footer">
                     <Form layout="inline" onSubmit={this.handleSubmit}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -32,7 +29,7 @@ class Footer extends React.Component {
                                 {getFieldDecorator("message", {
                                     rules: [{ required: true}],
                                 })(
-                                    <Input autoComplete="off" placeholder="Write a message..." />
+                                    <Input disabled={this.props.inputDisabled} autoComplete="off" placeholder="Message..." />
                                 )}
                             </div>
                             <div style={{width: '10vw', display:'flex', justifyContent:'center'}}>
@@ -48,7 +45,8 @@ class Footer extends React.Component {
 const FooterForm = Form.create()(Footer);
 
 const mapStateToProps = store => ({
-    messageContext: store.messageReducer.context
+    messageContext: store.messageReducer.context,
+    inputDisabled: store.uiReducer.messageInputDisabled
 });
 const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(FooterForm);

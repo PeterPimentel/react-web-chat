@@ -1,7 +1,7 @@
-import DATA from '../../components/ChatContainer/Data';
 import { fetchMessage } from '../../api/nlu';
-import {normalizeInput as watsonInput} from '../../utils/watson';
-import {extractContext} from '../../utils/messageUtil';
+import {extractContext, convertBasedOnNlu} from '../../utils/messageUtil';
+import {messageInputDisabled} from './uiReducer';
+
 // Action Types
 export const Types = {
     ADD_MESSAGE: 'ADD_MESSAGE',
@@ -48,11 +48,14 @@ export function saveContext(ctx) {
 
 export function sendMessage(message) {
     return dispatch => {
+        dispatch(messageInputDisabled(true))
         dispatch(addMessage(extractContext(message)))
-        fetchMessage(message).then(res => {
+        fetchMessage(convertBasedOnNlu(message,'me')).then(res => {
+            dispatch(messageInputDisabled(false))
             dispatch(saveContext(res.context))
-            dispatch(addMessage(watsonInput(res)))
+            dispatch(addMessage(convertBasedOnNlu(res, 'bot')))
         }).catch(err => {
+            dispatch(messageInputDisabled(false))
             console.log("Err[REDUCER]", err)
         })
     };
