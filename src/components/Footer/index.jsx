@@ -21,7 +21,6 @@ class Footer extends React.Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <Affix offsetBottom={0}>
-                <span>Digitando...</span>
                 <div className="ps-chat-footer">
                     <Form layout="inline" onSubmit={this.handleSubmit}>
                         <div style={{ display: 'flex', alignItems: 'center' }}>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Avatar, Button } from 'antd';
+import WaveSpin from '../Feedback/WaveSpin';
+import DotSpin from '../Feedback/DotSpin';
 
 export default function Header() {
     return (
@@ -9,6 +11,7 @@ export default function Header() {
             </div>
             <div style={{ width: '80vw' }}>
                 <span className="ps-bot-name">Botinho</span>
+                <DotSpin/>
             </div>
             <div style={{ width: '10vw' }}>
                 <Button className="ps-transparent-button ps-footer-button" icon="more"></Button>
