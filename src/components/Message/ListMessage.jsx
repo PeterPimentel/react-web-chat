@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../redux/reducers/messageReducer';
-import {normalizeMessage} from '../../utils/messageUtil';
 import {MESSAGE_ANIMATION} from '../../config/uiSettings';
 
 function ListMessage (props) {
@@ -22,7 +21,7 @@ function ListMessage (props) {
                         return(
                             <li className={`ps-message ps-li-message ${animation}`} key={'list-itn'+idx}
                                 onClick={
-                                    ()=>{props.sendMessage(normalizeMessage(option.value,props.messageContext))}
+                                    ()=>{props.sendMessage(option.value,props.messageContext)}
                             }>
                                 {option.text}
                             </li>

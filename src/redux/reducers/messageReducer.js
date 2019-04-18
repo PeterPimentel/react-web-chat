@@ -1,5 +1,5 @@
 import { fetchMessage } from '../../api/nlu';
-import {extractContext, convertBasedOnNlu} from '../../utils/messageUtil';
+import {addContext, convertBasedOnNlu, normalizeMessage} from '../../utils/messageUtil';
 import {messageInputDisabled} from './uiReducer';
 
 // Action Types
@@ -46,17 +46,20 @@ export function saveContext(ctx) {
     }
 }
 
-export function sendMessage(message) {
-    return dispatch => {
+export function sendMessage(message, context) {
+    return async dispatch => {
+        let normalizedMessage = normalizeMessage(message)
         dispatch(messageInputDisabled(true))
-        dispatch(addMessage(extractContext(message)))
-        fetchMessage(convertBasedOnNlu(message,'me')).then(res => {
+        dispatch(addMessage(normalizedMessage))
+        try {
+            const withContext = addContext(normalizedMessage,context)
+            const res = await fetchMessage(convertBasedOnNlu(withContext,'me'))
             dispatch(messageInputDisabled(false))
             dispatch(saveContext(res.context))
             dispatch(addMessage(convertBasedOnNlu(res, 'bot')))
-        }).catch(err => {
+        } catch (err) {
             dispatch(messageInputDisabled(false))
             console.log("Err[REDUCER]", err)
-        })
+        }
     };
 }

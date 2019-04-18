@@ -1,11 +1,10 @@
 import Api from './Api';
 
-export function fetchMessage(message) {
-    return new Promise((resolve,reject)=>{
-        Api.post('/web/receive', message).then( res => {
-            resolve(res.data)
-        }).catch( err => {
-            reject(err)
-        })
-    })
+export async function fetchMessage(message) {
+    try {
+        const res = await Api.post('/web/receive', message);
+        return res.data;       
+    } catch (err) {
+        throw err
+    }
 }

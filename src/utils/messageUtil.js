@@ -2,9 +2,8 @@ import nanoid from 'nanoid';
 import {NLU} from '../config/nluSettings';
 import {normalizeInput as inputWatson, normalizeOutput as outputWatson} from './watson';
 
-export function normalizeMessage(text, context) {
+export function normalizeMessage(text) {
     return [{
-        context,
         from: 'me',
         message: text,
         sentAt: new Date(),
@@ -13,9 +12,10 @@ export function normalizeMessage(text, context) {
     }]
 }
 
-//Reduce the size of array saved in the store
-export function extractContext(message) {
+//Adding the context to the message
+export function addContext(message, context) {
     return [{
+        context: context,
         from:'me',
         message: message[0].message,
         sentAt: new Date(),
