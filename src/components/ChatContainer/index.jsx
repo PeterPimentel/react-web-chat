@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import Message from '../Message';
+import StatusRequest from '../Feedback/StatusRequest';
 
 function ChatContainer(props) {
     const { conversation } = props;
@@ -12,12 +13,13 @@ function ChatContainer(props) {
     }, [conversation]);
 
     return (
-        <div ref={scrollbar} className="ps-chat-container" style={{ width: '100vw', height: '87vh' }}>
+        <div ref={scrollbar} className="ps-chat-container" style={{ width: '100vw', height: '90vh' }}>
             {conversation.map((conv) => {
                 return (
                     <Message key={conv.id} conversation={conv} />
                 )
             })}
+            {/* <StatusRequest/> */}
         </div>
     )
 }
