@@ -19,13 +19,17 @@ function ChatContainer(props) {
                     <Message key={conv.id} conversation={conv} />
                 )
             })}
-            {/* <StatusRequest/> */}
+            {
+                props.botTyping && <StatusRequest error={props.errorOnMessage}/>
+            }
         </div>
     )
 }
 
 const mapStateToProps = store => ({
-    conversation: store.messageReducer.conversation
+    conversation: store.messageReducer.conversation,
+    errorOnMessage: store.messageReducer.errorOnSendMessage,
+    botTyping: store.uiReducer.botTyping
 });
 
 export default connect(mapStateToProps)(ChatContainer);

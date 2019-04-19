@@ -1,17 +1,19 @@
 import { fetchMessage } from '../../api/nlu';
 import {addContext, convertBasedOnNlu, normalizeMessage} from '../../utils/messageUtil';
-import {messageInputDisabled} from './uiReducer';
+import {messageInputDisabled, botTyping} from './uiReducer';
 
 // Action Types
 export const Types = {
     ADD_MESSAGE: 'ADD_MESSAGE',
-    SAVE_CONTEXT: 'SAVE_CONTEXT'
+    SAVE_CONTEXT: 'SAVE_CONTEXT',
+    ERROR_ON_SEND_MESSAGE: 'ERROR_ON_SEND_MESSAGE'
 };
 
 // Reducer
 const initialState = {
     conversation:[],
-    context: {}
+    context: {},
+    errorOnSendMessage: null
 };
 
 export default function messageReducer(state = initialState, action) {
@@ -25,6 +27,11 @@ export default function messageReducer(state = initialState, action) {
             return {
                 ...state,
                 context: action.payload
+            };
+        case Types.ERROR_ON_SEND_MESSAGE:
+            return {
+                ...state,
+                errorOnSendMessage: action.payload
             };
         default:
             return state;
@@ -46,20 +53,30 @@ export function saveContext(ctx) {
     }
 }
 
+export function showError(err) {
+    return {
+        type: Types.ERROR_ON_SEND_MESSAGE,
+        payload: err
+    }
+}
+
 export function sendMessage(message, context) {
     return async dispatch => {
         let normalizedMessage = normalizeMessage(message)
+        dispatch(botTyping(true))
+        dispatch(showError(null))
         dispatch(messageInputDisabled(true))
         dispatch(addMessage(normalizedMessage))
         try {
             const withContext = addContext(normalizedMessage,context)
             const res = await fetchMessage(convertBasedOnNlu(withContext,'me'))
+            dispatch(botTyping(false))
             dispatch(messageInputDisabled(false))
             dispatch(saveContext(res.context))
             dispatch(addMessage(convertBasedOnNlu(res, 'bot')))
         } catch (err) {
             dispatch(messageInputDisabled(false))
-            console.log("Err[REDUCER]", err)
+            dispatch(showError({message: err.message ? err.message :'Ocorreu um erro inesperado.'}))
         }
     };
 }
