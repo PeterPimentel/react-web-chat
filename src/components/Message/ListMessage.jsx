@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../redux/reducers/messageReducer';
 import {MESSAGE_ANIMATION} from '../../config/uiSettings';
+import TextMessage from './TextMessage';
 
 function ListMessage (props) {
     let animation = ''
@@ -12,9 +13,7 @@ function ListMessage (props) {
     }
     return(
         <div>
-            <div className={`ps-message ps-message-received ${animation}`}>
-                <span>{props.conversation.message}</span>
-            </div>
+            <TextMessage conversation={props.conversation}/>
             <ul style={{listStyle:'none', paddingLeft:'1vw'}}>
                 {
                     props.conversation.options.map((option,idx)=>{

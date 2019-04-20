@@ -65,7 +65,7 @@ export function sendMessage(message, context) {
         let normalizedMessage = normalizeMessage(message)
         dispatch(botTyping(true))
         dispatch(showError(null))
-        dispatch(messageInputDisabled(true))
+        // dispatch(messageInputDisabled(true))
         dispatch(addMessage(normalizedMessage))
         try {
             const withContext = addContext(normalizedMessage,context)

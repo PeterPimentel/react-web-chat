@@ -1,0 +1,87 @@
+iframe.ps-web-chat-iframe {
+    width: 320px;
+    height: 530px;
+    border: 0px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1); */
+    box-shadow: 1px 18px 38px 2px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 3vw;
+    bottom: 11vh;
+}
+
+.ps-button-circle {
+    border: none;
+    outline: none;
+    display: block;
+    position: absolute;
+    bottom: 1vh;
+    right: 3vw;
+    padding: 0;
+    z-index: 98;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    height: 7vh;
+    width: 7vh;
+    min-width: 50px;
+    min-height: 50px;
+    background-color: #3f51b5;
+    transition: 0.2s;
+    text-align: center;
+}
+.ps-button-circle:active {
+    transform: scale(0.9);
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
+}
+.ps-button-circle:hover {
+    cursor: pointer;
+    background-color: #606fc7;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+}
+.ps-button-circle img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+    transform: rotate(180deg);
+}
+
+.hidden-trigger {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.hidden-trigger:checked ~ .ps-button-circle {
+    transform: scale(0.9);
+    cursor: pointer;
+    background-color: #606fc7;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hidden-trigger:checked ~ .ps-button-circle img {
+    transform: rotate(45deg);
+}
+
+@media (max-width: 420px) {
+    iframe.ps-web-chat-iframe {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    .ps-button-circle {
+        margin-bottom: 9vh;
+        width: 25px;
+        height: 25px;
+    }
+}
