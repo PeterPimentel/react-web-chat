@@ -8,11 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <input class="hidden-trigger" id="toogle" type="checkbox">
-    <label class="ps-button-circle" for="toogle">
-        <img src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png" alt="" />
-    </label>
-    <iframe class="ps-web-chat-iframe" src="http://localhost:3000"></iframe>
+    <div id="ps-web-chat-app">
+        <iframe class="ps-web-chat-iframe" src="http://localhost:3000/skeleton"></iframe>
+        <input class="hidden-trigger" id="toogle" type="checkbox">
+        <label class="ps-button-circle" for="toogle">
+            <img src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/btw_ic_speeddial_white_24dp_2x.png" alt="" />
+        </label>
+    </div>
     <script src="./reactWebChat.js" type="text/javascript"></script>
 </body>
 </html>

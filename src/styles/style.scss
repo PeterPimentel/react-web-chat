@@ -54,6 +54,9 @@
     background: $primary-color;
     color: $primary-font-color;
     border-radius: 20px 0px 20px 20px;
+    a{
+        color: $primary-font-color;
+    }
 }
 
 .ps-message-received{

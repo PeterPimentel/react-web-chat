@@ -7,6 +7,7 @@ iframe.ps-web-chat-iframe {
     position: absolute;
     right: 3vw;
     bottom: 11vh;
+    display: none;
 }
 
 .ps-button-circle {
@@ -14,10 +15,9 @@ iframe.ps-web-chat-iframe {
     outline: none;
     display: block;
     position: absolute;
-    bottom: 1vh;
+    bottom: 2vh;
     right: 3vw;
     padding: 0;
-    z-index: 98;
     margin: 0 auto;
     -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
@@ -39,6 +39,7 @@ iframe.ps-web-chat-iframe {
     background-color: #606fc7;
     box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
 }
+
 .ps-button-circle img {
     position: absolute;
     top: 50%;
@@ -73,14 +74,13 @@ iframe.ps-web-chat-iframe {
     iframe.ps-web-chat-iframe {
         position: absolute;
         top: 0;
-        bottom: 0;
-        right: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 89vh;
     }
+
     .ps-button-circle {
-        margin-bottom: 9vh;
+        margin-bottom: 1vh;
         width: 25px;
         height: 25px;
     }
