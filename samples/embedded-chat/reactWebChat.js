@@ -1,8 +1,9 @@
-const psIframeChat = document.querySelector('.ps-web-chat-iframe');
-const psButtonChat = document.querySelector('.ps-button-circle');
-const psChatSkeleton = document.querySelector('#ps-chat-skeleton');
+const iframeChat = document.querySelector('.ps-web-chat-iframe');
+const buttonChat = document.querySelector('.ps-button-circle');
+const chatSkeleton = document.querySelector('#ps-chat-skeleton');
 let iframeLoaded = false;
 let iframeState = false;
+
 const iframeSkeleton = `
     <div>
         <div class="ps-skeleton-header">
@@ -15,11 +16,13 @@ const iframeSkeleton = `
         </div>
     </div>
 `
-psIframeChat.onload = () => {
+iframeChat.onload = () => {
     setInterval(() => {
-        psChatSkeleton.style.display = 'none';
+        chatSkeleton.style.display = 'none';
         if(iframeState){
-            psIframeChat.style.display = 'inherit';
+            iframeChat.style.display = 'inherit';
+            buttonChat.classList.remove('ps-chat-closed-button');
+            buttonChat.classList.add('ps-chat-opened-button');
         }
         iframeLoaded = true;
         console.log('INtervarl iframe is loaded');    
@@ -28,14 +31,21 @@ psIframeChat.onload = () => {
 }
 
 window.onload = () => {
-    if(psChatSkeleton){
-        psChatSkeleton.innerHTML = iframeSkeleton;
+    if(chatSkeleton){
+        chatSkeleton.innerHTML = iframeSkeleton;
     }
-    psButtonChat.addEventListener('click', () => {
+    buttonChat.addEventListener('click', () => {
         if(iframeLoaded){
-            psIframeChat.style.display = iframeState ? 'none' : 'inherit';
+            iframeChat.style.display = iframeState ? 'none' : 'inherit';
+            if(iframeState){
+                buttonChat.classList.remove('ps-chat-opened-button');
+                buttonChat.classList.add('ps-chat-closed-button');
+            }else{
+                buttonChat.classList.remove('ps-chat-closed-button');
+                buttonChat.classList.add('ps-chat-opened-button');
+            }
         }else{
-            psChatSkeleton.style.display = iframeState ? 'none' : 'inherit'
+            chatSkeleton.style.display = iframeState ? 'none' : 'inherit'
         }
         iframeState = !iframeState;
     });
