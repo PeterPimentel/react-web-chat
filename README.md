@@ -1,30 +1,34 @@
+<h1 align="center" style="border-bottom: none;">💬 React  Chatbot UI</h1>
+<h3 align="center">This React app, is a fully customizable web-based client for Chatbots.</h3>
 <p align="center">
-    <img src="./docs/images/react-chat-icon.png" alt="React chat logo" width="240" />
+    <img src="./docs/images/app_sample_1.PNG" alt="React chat logo" width="240"/>
 </p>
-<p align="center"><a href="http://www.freepik.com">Designed by Starline / Freepik</a></p>
 
-<p align="center">A fully-customizable web-based client for Chat Bots.</p>
+## A solid foundation
+React, Redux, Ant Design, React Router, Firebase integration. A perfect combination of best frameworks.
+<p align="center">
+    <img src="./docs/images/icon-react.png" alt="React chat logo" width="60px"/>
+    <img src="./docs/images/icon-redux.png" alt="React chat logo" width="60px"/>
+    <img src="./docs/images/icon-antdesign.png" alt="React chat logo" width="60px"/>
+    <img src="./docs/images/react-router-dom.png" alt="React chat logo" width="60px"/>
+    <img src="./docs/images/firebase-icon.png" alt="React chat logo" width="120px"/>
+</p>
 
 ## How to use
-First, install all depencys by the command `npm install`. 
+1. Install all depencys by the command `npm install`.
+1. Run the app in the development mode `npm start`.
+1. Open [http://localhost:3000](http://localhost:3000) to view it full screen in the browser.
+1. You can see in the file `samples/embedded-chat/index.html` how to embedded the chat into your page.
 
-Then runs the app in the development mode .<br>
+<span  style="color:#660000">Please note this app is only the UI, you need implement the back-end app to connect to the NLU service.<span>
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Customize
+### 🤖 NLUs
+In the `src/utils/` you can find the files responsibles to convert the NLU format to the format used by the app.
 
-Run the server with `npm star`.
+### 🌈Colors
+In the `src/styles/theme.css` you can customize the colors of your chat.
 
-Inside the `src/components/ChatContainer/Data.js` has the list of messages.
+<hr>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### Custom colors
-In the `src/styles/style.css` you can customize the colors of your chat.
+😃 If you liked this project and used it in yout chatbot please let me know!
