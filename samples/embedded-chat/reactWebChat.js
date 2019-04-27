@@ -13,7 +13,8 @@ const iframeSkeleton = `
     <div class="ps-skeleton-footer">
         <div class="ps-skeleton-footer-input"></div>
     </div>
-    `
+`
+
 function buttonClick(chat,skeleton, button,loaded) {
     if(loaded){
         toggleChat(chat, button, iframeState)
@@ -35,18 +36,20 @@ function toggleChat(iframe, button, hide) {
 }
 
 iframeChat.onload = () => {
-    setInterval(() => {
+    if(chatSkeleton)
         chatSkeleton.style.display = 'none';
-        if(iframeState)
-            toggleChat(iframeChat, buttonChat, false)
-        iframeLoaded = true;
-    }, 3000);
+
+    if(iframeState)
+        toggleChat(iframeChat, buttonChat, false)
+    iframeLoaded = true;
 }
 
 window.onload = () => {
-    if(chatSkeleton){
+    buttonChat.style.display = 'block';
+    
+    if(chatSkeleton)
         chatSkeleton.innerHTML = iframeSkeleton;
-    }
+
     buttonChat.addEventListener('click', () => {
         buttonClick(iframeChat,chatSkeleton, buttonChat,iframeLoaded)
         iframeState = !iframeState;

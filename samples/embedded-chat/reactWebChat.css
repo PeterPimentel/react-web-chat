@@ -25,7 +25,7 @@ iframe.ps-web-chat-iframe {
 .ps-button-circle {
     border: none;
     outline: none;
-    display: block;
+    display: none;
     position: absolute;
     bottom: 2vh;
     right: 3vw;
