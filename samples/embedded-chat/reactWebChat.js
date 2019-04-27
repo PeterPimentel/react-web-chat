@@ -5,29 +5,42 @@ let iframeLoaded = false;
 let iframeState = false;
 
 const iframeSkeleton = `
-    <div>
-        <div class="ps-skeleton-header">
-            <div class="ps-skeleton-avatar"></div>
-            <div class="ps-skeleton-name"></div>
-        </div>
-        <div class="ps-skeleton-content color-change-2x">
-        </div>
-        <div class="ps-skeleton-footer">
-        </div>
+    <div class="ps-skeleton-header">
+        <div class="ps-skeleton-avatar"></div>
+        <div class="ps-skeleton-name"></div>
     </div>
-`
+    <div class="ps-skeleton-content color-change-2x"></div>
+    <div class="ps-skeleton-footer">
+        <div class="ps-skeleton-footer-input"></div>
+    </div>
+    `
+function buttonClick(chat,skeleton, button,loaded) {
+    if(loaded){
+        toggleChat(chat, button, iframeState)
+    }else{
+        toggleChat(skeleton, button, iframeState)
+    }
+}
+
+function toggleChat(iframe, button, hide) {
+    if(hide){
+        iframe.style.display = 'none';
+        button.classList.remove('ps-chat-opened-button');
+        button.classList.add('ps-chat-closed-button');
+    }else{
+        iframe.style.display = 'inherit';
+        button.classList.remove('ps-chat-closed-button');
+        button.classList.add('ps-chat-opened-button');
+    }
+}
+
 iframeChat.onload = () => {
     setInterval(() => {
         chatSkeleton.style.display = 'none';
-        if(iframeState){
-            iframeChat.style.display = 'inherit';
-            buttonChat.classList.remove('ps-chat-closed-button');
-            buttonChat.classList.add('ps-chat-opened-button');
-        }
+        if(iframeState)
+            toggleChat(iframeChat, buttonChat, false)
         iframeLoaded = true;
-        console.log('INtervarl iframe is loaded');    
-    }, 6000);
-    console.log('iframe is completely loaded');
+    }, 3000);
 }
 
 window.onload = () => {
@@ -35,18 +48,7 @@ window.onload = () => {
         chatSkeleton.innerHTML = iframeSkeleton;
     }
     buttonChat.addEventListener('click', () => {
-        if(iframeLoaded){
-            iframeChat.style.display = iframeState ? 'none' : 'inherit';
-            if(iframeState){
-                buttonChat.classList.remove('ps-chat-opened-button');
-                buttonChat.classList.add('ps-chat-closed-button');
-            }else{
-                buttonChat.classList.remove('ps-chat-closed-button');
-                buttonChat.classList.add('ps-chat-opened-button');
-            }
-        }else{
-            chatSkeleton.style.display = iframeState ? 'none' : 'inherit'
-        }
+        buttonClick(iframeChat,chatSkeleton, buttonChat,iframeLoaded)
         iframeState = !iframeState;
     });
 }
