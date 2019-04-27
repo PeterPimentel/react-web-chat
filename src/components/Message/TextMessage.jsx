@@ -15,8 +15,12 @@ export default function TextMessage({conversation}) {
             animation = 'scale-up-center'
     }
     return (
-        <div className={`ps-message ${from} ${animation}`}>
-            <Linkify>{conversation.message}</Linkify>
+        <div>
+            {conversation.message.length > 0 &&
+                <div className={`ps-message ${from} ${animation}`}>
+                    <Linkify>{conversation.message}</Linkify>
+                </div>
+            }
         </div>
     )
 }

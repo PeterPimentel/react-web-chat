@@ -1,6 +1,6 @@
 import nanoid from 'nanoid';
 import {NLU} from '../config/nluSettings';
-import {normalizeInput as inputWatson, normalizeOutput as outputWatson} from './watson';
+import {watsonToChat, chatToWatson} from './watson';
 
 export function normalizeMessage(text) {
     return [{
@@ -28,9 +28,9 @@ export function convertBasedOnNlu (message, from) {
     switch (NLU) {
         case 'WATSON':
             if(from === 'me'){
-                return outputWatson(message)
+                return chatToWatson(message)
             }else{
-                return inputWatson(message)
+                return watsonToChat(message)
             }
         default:
         break;

@@ -6,12 +6,12 @@ let iframeState = false;
 
 const iframeSkeleton = `
     <div class="ps-skeleton-header">
-        <div class="ps-skeleton-avatar"></div>
-        <div class="ps-skeleton-name"></div>
+        <div class="ps-skeleton-avatar ps-loading"></div>
+        <div class="ps-skeleton-name ps-loading"></div>
     </div>
-    <div class="ps-skeleton-content color-change-2x"></div>
+    <div class="ps-skeleton-content ps-loading"></div>
     <div class="ps-skeleton-footer">
-        <div class="ps-skeleton-footer-input"></div>
+        <div class="ps-skeleton-footer-input ps-loading"></div>
     </div>
 `
 

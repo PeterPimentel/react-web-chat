@@ -1,7 +1,7 @@
 import nanoid from 'nanoid';
 
 //This normalize is from Watson Assistant Version >= 2019-02-01
-export function normalizeInput(response) {
+export function watsonToChat(response) {
 	return response.output.generic.map(msg => {
 		switch (msg.response_type) {
 			case 'text':
@@ -46,7 +46,7 @@ export function normalizeInput(response) {
 	});
 }
 
-export function normalizeOutput(message) {
+export function chatToWatson(message) {
 	return {
 		context: message[0].context,
 		input: {
