@@ -161,7 +161,63 @@
 .ps-force-justify-end{
     justify-content: flex-end !important;
 }
+
+.ps-large-button{
+    border-radius: 25px;
+    padding: 0px 15vw 0px 15vw;
+}
+
+.ps-input-border-less{
+    border: 0px;
+    border-bottom: $primary-color 1px solid;
+    border-radius: 0px;
+}
+
+.ps-social-button{
+    border-radius: 25px;
+    padding: 0px 5vw 0px 5vw;
+    margin: 0vh 1vw 0vh 1vw;
+}
+
+.ps-align-center{
+    display:flex;
+    justify-content:center;
+}
+
 // END - General
+
+//START - Login
+.ps-login-content{
+    display: flex;
+    justify-content: center;
+
+    label.ant-form-item-required {
+        font-size: small;
+        font-weight: bold;
+        color: $primary-color;
+    }
+
+    label.ant-form-item-required::before {
+        content: '';
+    }
+
+    .ps-large-button{
+        background-color: $primary-color;
+        color: $primary-font-color;
+    }
+
+    .ps-login-link{
+        color: $secondary-font-color;
+    }
+}
+
+.ps-login-brand{
+    height: 25vw;
+    // max-height: 20vh;
+}
+
+
+// END - Login
 
 //START - Medias
 @media (max-width: 300px) 
