@@ -171,6 +171,7 @@
     border: 0px;
     border-bottom: $primary-color 1px solid;
     border-radius: 0px;
+    background-color: transparent;
 }
 
 .ps-social-button{
@@ -184,15 +185,25 @@
     justify-content:center;
 }
 
+.ps-align-end{
+    display:flex;
+    justify-content:flex-end;
+}
+
 // END - General
 
 //START - Login
 .ps-login-content{
     display: flex;
     justify-content: center;
+    background-color: #ffffff;
+    padding: 3vh;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
 
     label.ant-form-item-required {
-        font-size: small;
+        font-size: smaller;
         font-weight: bold;
         color: $primary-color;
     }
@@ -204,6 +215,7 @@
     .ps-large-button{
         background-color: $primary-color;
         color: $primary-font-color;
+        border-color: $primary-color;
     }
 
     .ps-login-link{
@@ -211,11 +223,19 @@
     }
 }
 
-.ps-login-brand{
-    height: 25vw;
-    // max-height: 20vh;
+.ps-login-background{
+    background: #4776E6;
+    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+    background: linear-gradient(to right, #8E54E9, #4776E6);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.ps-login-brand{
+    height: 20vh;
+}
 
 // END - Login
 
@@ -224,6 +244,13 @@
 {
     .ps-bot-name{
         padding-left: 2rem;
+    }
+}
+
+@media (max-width: 460px) 
+{
+    .ps-large-button{
+        padding: 0px 30vw 0px 30vw;
     }
 }
 
