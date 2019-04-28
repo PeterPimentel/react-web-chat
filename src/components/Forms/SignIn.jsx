@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../redux/reducers/messageReducer';
 import { Form, Input, Button, Divider } from 'antd';
-import reactChatLogo from '../../assets/images/react_chat_logo.svg';
+import ChatBrand from '../SVG/chatBrand';;
 
 class SignIn extends React.Component {
 
@@ -23,7 +23,7 @@ class SignIn extends React.Component {
             <div className="ps-login-content">
                 <Form onSubmit={this.handleSubmit}>
                     <div className="ps-align-center">
-                        <img className="ps-login-brand" src={reactChatLogo} alt="company brand"></img>
+                        <ChatBrand className="ps-login-brand"/>
                     </div>
                     <Form.Item label="USERNAME">
                         {getFieldDecorator('userName', {
@@ -53,7 +53,7 @@ class SignIn extends React.Component {
                     </Form.Item>
                     <Divider style={{ color: "#6d6d6d", fontSize:"x-small" }}>OR CONNECT WITH</Divider>
                     <Form.Item>
-                        <div>
+                        <div className="ps-align-center">
                             <Button
                                 style={{ backgroundColor: "#3b5998", borderColor: "#3b5998" }}
                                 icon="facebook" className="ps-social-button" type="primary">

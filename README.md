@@ -1,6 +1,7 @@
 <h1 align="center" style="border-bottom: none;">💬 React  Chatbot UI</h1>
 <h3 align="center">This React app, is a fully customizable web-based client for Chatbots.</h3>
 <p align="center">
+    <img src="./docs/images/app_sample_0.PNG" alt="React chat logo" width="240"/>
     <img src="./docs/images/app_sample_1.PNG" alt="React chat logo" width="240"/>
 </p>
 
