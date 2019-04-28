@@ -224,9 +224,9 @@
 }
 
 .ps-login-background{
-    background: #4776E6;
-    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
-    background: linear-gradient(to right, #8E54E9, #4776E6);
+    background: $primary-color;
+    background: -webkit-linear-gradient(to right, $primary-color, rgba($primary-color,0.3));
+    background: linear-gradient(to right, $primary-color, rgba($primary-color,0.3));
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -251,6 +251,10 @@
 {
     .ps-large-button{
         padding: 0px 30vw 0px 30vw;
+    }
+    .ps-login-content{
+        width: 100vw;
+        height: 100vh;
     }
 }
 

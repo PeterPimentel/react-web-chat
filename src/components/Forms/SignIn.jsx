@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { sendMessage } from '../../redux/reducers/messageReducer';
 import { Form, Input, Button, Divider } from 'antd';
-import reactChatBrand from '../../assets/images/react-chat-icon.png'
+import reactChatLogo from '../../assets/images/react_chat_logo.svg';
 
 class SignIn extends React.Component {
 
@@ -23,7 +23,7 @@ class SignIn extends React.Component {
             <div className="ps-login-content">
                 <Form onSubmit={this.handleSubmit}>
                     <div className="ps-align-center">
-                        <img className="ps-login-brand" src={reactChatBrand} alt="company brand"></img>
+                        <img className="ps-login-brand" src={reactChatLogo} alt="company brand"></img>
                     </div>
                     <Form.Item label="USERNAME">
                         {getFieldDecorator('userName', {
@@ -51,7 +51,7 @@ class SignIn extends React.Component {
                             </Button>
                         </div>
                     </Form.Item>
-                    <Divider style={{ color: "#6d6d6d" }}>OR CONNECT WITH</Divider>
+                    <Divider style={{ color: "#6d6d6d", fontSize:"x-small" }}>OR CONNECT WITH</Divider>
                     <Form.Item>
                         <div>
                             <Button
