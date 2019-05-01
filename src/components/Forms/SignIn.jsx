@@ -42,7 +42,7 @@ class SignIn extends React.Component {
                         </Form.Item>
                     </div>
                     <div className="ps-align-end" style={{ marginTop: "-3.5vh", paddingBottom: "2vh" }}>
-                        <a className="ps-login-link" href="">Forgot Password?</a>
+                        {/* <a className="ps-login-link" href="">Forgot Password?</a> */}
                     </div>
                     <Form.Item>
                         <div className="ps-align-center">
