@@ -1,6 +1,7 @@
 import { fetchMessage } from '../../api/nlu';
 import {addContext, convertBasedOnNlu, normalizeMessage} from '../../utils/messageUtil';
 import {messageInputDisabled, botTyping} from './uiReducer';
+import MockMessages from '../../utils/MockMessages';
 
 // Action Types
 export const Types = {
@@ -11,7 +12,7 @@ export const Types = {
 
 // Reducer
 const initialState = {
-    conversation:[],
+    conversation:MockMessages,
     context: {},
     errorOnSendMessage: null
 };

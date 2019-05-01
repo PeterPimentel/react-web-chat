@@ -96,6 +96,65 @@
 .ps-chat-error-feedback {
     color: red;
 }
+
+.ps-modal {
+    position: fixed; /* Stay in place */
+    z-index: 15; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.ps-modal-header{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ps-modal-content{
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ps-modal-image {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.ps-modal-image{  
+    -webkit-animation-name: modal-zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: modal-zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes modal-zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes modal-zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.ps-modal-icon {
+    color: #ffffff;
+    transition: 0.3s;
+    font-size: 25px;
+    padding-right: 5%;
+}
 // END - Message e ChatConatiner
 
 // START - Footer

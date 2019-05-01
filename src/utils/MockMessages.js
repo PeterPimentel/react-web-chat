@@ -26,6 +26,12 @@ export default [
     'type': 'image'
   }, {
     'from': 'bot',
+    'message': 'https://f15d.nyc3.cdn.digitaloceanspaces.com/tudoimporta.com.br/2018/09/wallpaper12.png',
+    'sentAt': new Date(),
+    'id': nanoid(),
+    'type': 'image'
+  }, {
+    'from': 'bot',
     'message': 'All the Lorem Ipsum generators on the',
     'sentAt': new Date(),
     'id': nanoid(),
@@ -48,8 +54,13 @@ export default [
     'sentAt': new Date(),
     'id': nanoid(),
     'type': 'image'
-  },
-  {
+  },{
+    'from': 'me',
+    'message': 'https://saidaminhalente.com/wp-content/uploads/2018/05/wallpaper_bowser_nintendo_1.jpg',
+    'sentAt': new Date(),
+    'id': nanoid(),
+    'type': 'image'
+  },{
     'from': 'me',
     'message': 'English versions from the 1914 translation by H. Rackham',
     'sentAt': new Date(),
