@@ -299,6 +299,27 @@
 
 // END - Login
 
+// START - Page 404
+.ps-error-page-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #9dd6f6;
+
+    .ps-button-link{
+        padding: 0.6rem;
+        background-color: #ffffff;
+        border-radius: 20px;
+        font-weight: bold;
+        padding: 0.5em 4em 0.5em 4em;
+        color: #9dd6f6;
+    }
+}
+// END - Page 404
+
 //START - Medias
 @media (max-width: 300px) 
 {
