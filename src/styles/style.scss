@@ -21,6 +21,7 @@
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
     box-shadow: 0 0 3px #B2B2B2;
     align-items: center;
+    width: fit-content;
     max-width: 70vw;
     font-weight: 500;
 }
@@ -293,7 +294,7 @@
 }
 
 .ps-chat-brand{
-    height: 20vh;
+    height: 15vh;
     fill: $primary-color;
 }
 
