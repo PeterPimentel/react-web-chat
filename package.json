@@ -6,6 +6,7 @@
     "antd": "^3.16.1",
     "axios": "^0.18.0",
     "emoji-picker-react": "^2.1.1",
+    "firebase": "^5.11.0",
     "linkifyjs": "^2.1.8",
     "nanoid": "^2.0.1",
     "node-sass": "^4.11.0",

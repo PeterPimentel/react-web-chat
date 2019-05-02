@@ -1,7 +1,6 @@
 import React from 'react';
 import ErrorImage from '../../assets/images/erro_404.png'
 import { Link } from 'react-router-dom';
-import { Button } from 'antd';
 
 function Error404() {
     return(
