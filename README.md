@@ -2,8 +2,8 @@
 <p align="center">Work in progress</p>
 <h3 align="center">This React app, is a fully customizable web-based client for Chatbots.</h3>
 <p align="center">
-    <img src="./docs/images/app_sample_0.PNG" alt="React chat logo" width="240"/>
-    <img src="./docs/images/app_sample_1.PNG" alt="React chat logo" width="240"/>
+    <img src="./docs/images/app_sample_0.png" alt="React chat logo" width="240"/>
+    <img src="./docs/images/app_sample_1.png" alt="React chat logo" width="240"/>
 </p>
 
 ## A solid foundation
