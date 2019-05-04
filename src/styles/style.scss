@@ -16,6 +16,13 @@
 // END - Header
 
 // START - Message e ChatConatiner
+.ps-message-time {
+    display: flex;
+    padding: 0px 1rem 0px 1rem;
+    font-size: xx-small;
+    margin-top: -5px;
+}
+
 .ps-message {
     padding: 0.2rem 1rem 0.2rem 1rem;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem;
@@ -91,7 +98,7 @@
 }
 
 .ps-chat-container > div:last-child{
-    padding-bottom: 7vh;
+    padding-bottom: 9vh;
 }
 
 .ps-chat-error-feedback {
@@ -156,6 +163,11 @@
     font-size: 25px;
     padding-right: 5%;
 }
+div.ps-media-message {
+    width: 70vh !important;
+    height: auto !important;
+}
+
 // END - Message e ChatConatiner
 
 // START - Footer

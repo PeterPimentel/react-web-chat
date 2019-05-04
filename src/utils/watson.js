@@ -30,7 +30,8 @@ export function watsonToChat(response) {
 				return {
 					from: 'bot',
 					type: 'image',
-					message: msg.source,
+					source: msg.source,
+					message: msg.title,
 					sentAt: new Date(),
 					id: nanoid()
 				}
