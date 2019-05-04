@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { ConnectedRouter } from 'connected-react-router'
 import Chat from './components/pages/Chat';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import Error404 from './components/pages/Error404';
 
-class App extends Component {
-	render() {
-		return (
-			<div className="App">
+function App ({history}) {
+	return (
+		<div className="App">
+			<ConnectedRouter history={history}>
 				<Router>
 					<Switch>
 						<Route exact path="/" component={Chat} />
@@ -17,9 +18,9 @@ class App extends Component {
 						<Route path="*" component={Error404} />
 					</Switch>
 				</Router>
-			</div>
-		);
-	}
+			</ConnectedRouter>
+		</div>
+	);
 }
 
 export default App;

@@ -5,13 +5,13 @@ import "./styles/style.scss";
 import "./styles/animista.scss";
 import App from './App';
 import { Provider } from 'react-redux';
-import { Store } from './redux/store';
+import { Store, history } from './redux/store';
 import * as serviceWorker from './serviceWorker';
 require('dotenv').config()
 
 ReactDOM.render(
     <Provider store={Store}>
-        <App />
+            <App history={history}/>
     </Provider>, 
     document.getElementById('root')
 );

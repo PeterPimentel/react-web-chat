@@ -1,3 +1,4 @@
+import { push } from 'connected-react-router'
 import {auth} from "../../api/FirebaseConfig";
 import {buttonLoading} from './uiReducer';
 
@@ -45,6 +46,7 @@ export function singupWithEmail(email, password) {
             await auth.createUserWithEmailAndPassword(email, password)
             dispatch(signin)
             dispatch(buttonLoading(false))
+            dispatch(push('/signin'))
         } catch (error) {
             console.log("Error ->",error)
         }
