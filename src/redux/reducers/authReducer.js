@@ -1,6 +1,7 @@
 import { push } from 'connected-react-router'
 import {auth} from "../../api/FirebaseConfig";
 import {buttonLoading} from './uiReducer';
+import {message} from 'antd';
 
 // Action Types
 export const Types = {
@@ -21,7 +22,7 @@ const initialState = {
 
 export default function authReducer(state = initialState, action) {
     switch (action.type) {
-        case Types.SIGNUP_USER:
+        case Types.SIGNIN_USER:
             return {
                 ...state,
                 logged: action.payload
@@ -39,16 +40,33 @@ export function signin() {
     }
 }
 
+export function singinWithEmail(email, password) {
+    return async dispatch => {
+        try {
+            dispatch(buttonLoading(true))
+            await auth.signInWithEmailAndPassword(email, password)
+            dispatch(buttonLoading(false))
+            dispatch(signin())
+            dispatch(push('/'))
+        } catch (error) {
+            const errorMessage = error.message || 'Error to access account!'
+            message.error(errorMessage);
+            dispatch(buttonLoading(false))
+        }
+    };
+}
+
 export function singupWithEmail(email, password) {
     return async dispatch => {
         try {
             dispatch(buttonLoading(true))
             await auth.createUserWithEmailAndPassword(email, password)
-            dispatch(signin)
             dispatch(buttonLoading(false))
-            dispatch(push('/signin'))
+            dispatch(push('/signin')) //You can redirect straight for chat page
         } catch (error) {
-            console.log("Error ->",error)
+            const errorMessage = error.message || 'Error to create account!'
+            message.error(errorMessage);
+            dispatch(buttonLoading(false))
         }
     };
 }

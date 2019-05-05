@@ -73,12 +73,12 @@ class SignUp extends React.Component {
                     <Divider style={{ color: "#6d6d6d", fontSize:"x-small" }}>OR REGISTER WITH</Divider>
                     <Form.Item>
                         <div className="ps-align-center">
-                            <Button
+                            <Button disabled
                                 style={{ backgroundColor: "#3b5998", borderColor: "#3b5998" }}
                                 icon="facebook" className="ps-social-button" type="primary">
                                 FACEBOOK
                             </Button>
-                            <Button
+                            <Button disabled
                                 style={{ backgroundColor: "#d9372c", borderColor: "#d9372c" }}
                                 icon="google" className="ps-social-button" type="primary">
                                 GOOGLE
@@ -93,7 +93,8 @@ class SignUp extends React.Component {
 const SignUpForm = Form.create()(SignUp);
 
 const mapStateToProps = store => ({
-    buttonLoading: store.uiReducer.buttonLoading
+    buttonLoading: store.uiReducer.buttonLoading,
+    location: store.router.location.pathname
 });
 const mapDispatchToProps = dispatch => bindActionCreators({ singupWithEmail }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);

@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { sendMessage } from '../../redux/reducers/messageReducer';
+import { singinWithEmail } from '../../redux/reducers/authReducer';
 import { Form, Input, Button, Divider } from 'antd';
-import ChatBrand from '../SVG/chatBrand';;
+import {Link} from 'react-router-dom'
+import ChatBrand from '../SVG/chatBrand';
 
 class SignIn extends React.Component {
 
@@ -11,8 +12,8 @@ class SignIn extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, value) => {
             if (!err) {
-                this.props.sendMessage(value.message, this.props.messageContext)
-                this.props.form.resetFields();
+                this.props.singinWithEmail(value.email, value.password)
+                this.props.form.resetFields('password');
             }
         });
     }
@@ -26,10 +27,10 @@ class SignIn extends React.Component {
                         <ChatBrand />
                     </div>
                     <Form.Item label="USERNAME">
-                        {getFieldDecorator('userName', {
-                            rules: [{ required: true, message: 'Please input your Username!' }],
+                        {getFieldDecorator('email', {
+                            rules: [{ required: true, message: 'Please input your Email!' }],
                         })(
-                            <Input className="ps-input-border-less" placeholder="Username" />
+                            <Input className="ps-input-border-less" placeholder="Email" type="email" />
                         )}
                     </Form.Item>
                     <div>
@@ -42,11 +43,14 @@ class SignIn extends React.Component {
                         </Form.Item>
                     </div>
                     <div className="ps-align-end" style={{ marginTop: "-3.5vh", paddingBottom: "2vh" }}>
+                        <Link to="/signup" className="ps-login-link">Create account</Link>
+                    </div>
+                    <div className="ps-align-end" style={{ marginTop: "-3.5vh", paddingBottom: "2vh" }}>
                         {/* <a className="ps-login-link" href="">Forgot Password?</a> */}
                     </div>
                     <Form.Item>
                         <div className="ps-align-center">
-                            <Button className="ps-large-button" type="primary" htmlType="submit">
+                            <Button loading={this.props.buttonLoading} className="ps-large-button" type="primary" htmlType="submit">
                                 LOGIN
                             </Button>
                         </div>
@@ -54,12 +58,12 @@ class SignIn extends React.Component {
                     <Divider style={{ color: "#6d6d6d", fontSize:"x-small" }}>OR CONNECT WITH</Divider>
                     <Form.Item>
                         <div className="ps-align-center">
-                            <Button
+                            <Button disabled
                                 style={{ backgroundColor: "#3b5998", borderColor: "#3b5998" }}
                                 icon="facebook" className="ps-social-button" type="primary">
                                 FACEBOOK
                             </Button>
-                            <Button
+                            <Button disabled
                                 style={{ backgroundColor: "#d9372c", borderColor: "#d9372c" }}
                                 icon="google" className="ps-social-button" type="primary">
                                 GOOGLE
@@ -74,8 +78,7 @@ class SignIn extends React.Component {
 const SignInForm = Form.create()(SignIn);
 
 const mapStateToProps = store => ({
-    messageContext: store.messageReducer.context,
-    inputDisabled: store.uiReducer.messageInputDisabled
+    buttonLoading: store.uiReducer.buttonLoading
 });
-const mapDispatchToProps = dispatch => bindActionCreators({ sendMessage }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ singinWithEmail }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);
