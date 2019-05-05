@@ -130,7 +130,7 @@ export default [
     'source':"https://i.koya.io/Kero%20Kero%20Bonito%20-%20Let's%20Go%20To%20The%20Forest.mp3",
     'sentAt': new Date(),
     'id': nanoid(),
-    'type': 'media'
+    'type': 'text'
   }, {
     'from': 'me',
     'message': 'There are many variations of passages of ',
@@ -193,6 +193,6 @@ export default [
     'source':'https://www.youtube.com/watch?v=UceaB4D0jpo',
     'sentAt': new Date(),
     'id': nanoid(),
-    'type': 'media'
+    'type': 'text'
   }
 ]
