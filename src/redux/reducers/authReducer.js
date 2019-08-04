@@ -15,9 +15,11 @@ export const Types = {
     SIGNUP_USER:'SIGNUP_USER'
 };
 
+
+//If no auth required (false) we can set logged for true
 // Reducer
 const initialState = {
-    logged:false
+    logged: !JSON.parse(process.env.REACT_APP_REQUIRE_AUTH)
 };
 
 export default function authReducer(state = initialState, action) {
