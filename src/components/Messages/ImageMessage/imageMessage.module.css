@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    width: 100%;
+    padding: 4px 0;
+}
+
+.messageContainer {
+    max-width: 70%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.messageContainer > img {
+    max-width: 100%;
+    max-height: 320px;
+}
+
+/* USER MESSAGE */
+
+.userMessage {
+    justify-content: flex-end;
+}
+
+.userMessage > .messageContainer {
+    margin-right: 8px;
+}
+
+/* BOT MESSAGE */
+
+.botMessage > .messageContainer {
+    box-shadow: var(--shadow-1);
+    margin-left: 8px;
+}
+
+.botMessage {
+    justify-content: flex-start;
+}
