@@ -18,14 +18,17 @@ export const ConnectedFooter: FunctionComponent = () => {
 
     const handleSendMessage = useCallback(() => {
         const id = Math.random() * 100000;
-        dispatch(
-            fetchMessagesSuccess({
-                id: id.toString(),
-                message,
-                type: 'TEXT',
-                from: 'USER',
-            }),
-        );
+
+        if (message && message.trim().length > 0) {
+            dispatch(
+                fetchMessagesSuccess({
+                    id: id.toString(),
+                    message,
+                    type: 'TEXT',
+                    from: 'USER',
+                }),
+            );
+        }
         setMessage('');
     }, [message, setMessage, dispatch]);
 

@@ -1,12 +1,10 @@
 import axios from 'axios';
-import { BEServiceProgram } from '../types/program.types';
 import { getTransactionByProgramsUrl } from './urlService';
 
-export const getTransactions = (): Promise<BEServiceProgram> => {
+export const getTransactions = (): Promise<any> => {
     const url = getTransactionByProgramsUrl('2314f371-39b1-4c80-8040-4144ff1bad09');
 
-    return new Promise<BEServiceProgram>((resolve, reject) => {
-        console.info('### *** FETCH -> program *** ###');
+    return new Promise<any>((resolve, reject) => {
         axios
             .get(url, {
                 headers: {
