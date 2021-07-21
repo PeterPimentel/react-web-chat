@@ -17,7 +17,7 @@ export const ConnectedChat: FunctionComponent = () => {
     return (
         <main className={styles.chat}>
             {messages.map((msg) => (
-                <MessageHandler key={msg.id} message={msg.message} from={msg.from} type={msg.type} />
+                <MessageHandler key={msg.uid} message={msg.message} from={msg.from} type={msg.type} />
             ))}
             <div ref={ref} />
             <Modal />

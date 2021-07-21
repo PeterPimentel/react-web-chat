@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://api-dev.fidel.uk/v1d';
+export const BASE_URL = process.env.REACT_APP_NLU_ENDPOINT;
 
-export const getTransactionByProgramsUrl = (programId: string) => {
-    return `${BASE_URL}/programs/${programId}/transactions`;
+export const getMessageUrl = () => {
+    return `${BASE_URL}`;
 };
