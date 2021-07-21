@@ -28,7 +28,7 @@ export const ImageMessage: FunctionComponent<ImageMessageProps> = ({ source, fro
     return (
         <div className={containerStyle}>
             <div className={styles.messageContainer} onClick={handleImageClick}>
-                <img className="typo-h50" src={source} alt="" />
+                <img src={source} alt="" />
             </div>
         </div>
     );

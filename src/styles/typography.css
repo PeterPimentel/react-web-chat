@@ -1,32 +1,8 @@
 /* --- Desktop and Tablets --- */
-.typo-h10 {
-    font-size: 48px;
-    font-weight: 400;
-}
-
-.typo-h11 {
-    font-size: 48px;
-    font-weight: 700;
-}
-
-.typo-h20 {
-    font-size: 38px;
-    font-weight: 400;
-}
-
-.typo-h21 {
-    font-size: 38px;
-    font-weight: 700;
-}
 
 .typo-h30 {
     font-size: 28px;
     font-weight: 400;
-}
-
-.typo-h31 {
-    font-size: 28px;
-    font-weight: 700;
 }
 
 .typo-h40 {
@@ -34,124 +10,41 @@
     font-weight: 400;
 }
 
-.typo-h41 {
-    font-size: 24px;
-    font-weight: 700;
-}
-
 .typo-h50 {
     font-size: 18px;
     font-weight: 400;
 }
-
-.typo-h51 {
-    font-size: 18px;
-    font-weight: 700;
-}
-
 .typo-h60 {
     font-size: 14px;
     font-weight: 400;
 }
 
-.typo-h61 {
-    font-size: 14px;
-    font-weight: 700;
-}
-
 /* --- Medium devices --- */
 @media (max-width: 480px) {
-    .typo-h10 {
-        font-size: 40px;
-        font-weight: 400;
-    }
-
-    .typo-h11 {
-        font-size: 40px;
-        font-weight: 700;
-    }
-
-    .typo-h20 {
-        font-size: 31px;
-        font-weight: 400;
-    }
-
-    .typo-h21 {
-        font-size: 31px;
-        font-weight: 700;
-    }
-
     .typo-h30 {
         font-size: 25px;
         font-weight: 400;
-    }
-
-    .typo-h31 {
-        font-size: 25px;
-        font-weight: 700;
     }
 
     .typo-h40 {
         font-size: 20px;
         font-weight: 400;
     }
-
-    .typo-h41 {
-        font-size: 20px;
-        font-weight: 700;
-    }
-
     .typo-h50 {
         font-size: 16px;
         font-weight: 400;
     }
-
-    .typo-h51 {
-        font-size: 16px;
-        font-weight: 700;
-    }
-
     .typo-h60 {
         font-size: 13px;
         font-weight: 400;
-    }
-
-    .typo-h61 {
-        font-size: 13px;
-        font-weight: 700;
     }
 }
 
 /* --- Small devices --- */
 @media (max-width: 375px) {
-    .typo-h10 {
-        font-size: 34px;
-        font-weight: 400;
-    }
-
-    .typo-h11 {
-        font-size: 34px;
-        font-weight: 700;
-    }
-
-    .typo-h20 {
-        font-size: 28px;
-        font-weight: 400;
-    }
-
-    .typo-h21 {
-        font-size: 28px;
-        font-weight: 700;
-    }
-
     .typo-h30 {
         font-size: 23px;
         font-weight: 400;
-    }
-
-    .typo-h31 {
-        font-size: 23px;
-        font-weight: 700;
     }
 
     .typo-h40 {
@@ -159,28 +52,12 @@
         font-weight: 400;
     }
 
-    .typo-h41 {
-        font-size: 19px;
-        font-weight: 700;
-    }
-
     .typo-h50 {
         font-size: 15px;
         font-weight: 400;
     }
-
-    .typo-h51 {
-        font-size: 15px;
-        font-weight: 700;
-    }
-
     .typo-h60 {
         font-size: 12px;
         font-weight: 400;
-    }
-
-    .typo-h61 {
-        font-size: 12px;
-        font-weight: 700;
     }
 }

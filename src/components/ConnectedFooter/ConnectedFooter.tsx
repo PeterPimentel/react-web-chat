@@ -1,13 +1,16 @@
 import React, { FunctionComponent, useState, useCallback, ChangeEvent } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { sendMessage } from '../../redux/messageStore';
+import { getContext } from '../../redux/selectors/context';
+import { generateUID } from '../../util/uidGeneratorUtil';
 
-import { fetchMessagesSuccess } from '../../redux/messageStore';
 import styles from './connectedFooter.module.css';
 
 export const ConnectedFooter: FunctionComponent = () => {
     const [message, setMessage] = useState('');
     const dispatch = useDispatch();
+    const context = useSelector(getContext);
 
     const handleInput = useCallback(
         (event: ChangeEvent<HTMLInputElement>) => {
@@ -17,16 +20,19 @@ export const ConnectedFooter: FunctionComponent = () => {
     );
 
     const handleSendMessage = useCallback(() => {
-        const id = Math.random() * 100000;
+        const uid = generateUID();
 
         if (message && message.trim().length > 0) {
             dispatch(
-                fetchMessagesSuccess({
-                    id: id.toString(),
-                    message,
-                    type: 'TEXT',
-                    from: 'USER',
-                }),
+                sendMessage(
+                    {
+                        uid,
+                        message,
+                        type: 'TEXT',
+                        from: 'USER',
+                    },
+                    context,
+                ),
             );
         }
         setMessage('');

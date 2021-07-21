@@ -13,7 +13,7 @@ export const Header: FunctionComponent = () => {
                     alt="chatbot avatar"
                 />
             </div>
-            <span className={`${styles.botName} typo-h30`}>Botinho</span>
+            <span className={`${styles.botName} typo-h30`}>Chatbot</span>
             <div className={styles.closeButton}>
                 <MoreOutlined className={`${styles.closeButtonIcon} typo-h30`} />
             </div>

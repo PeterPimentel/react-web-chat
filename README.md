@@ -31,7 +31,7 @@ $ npm install
 1. Rename the file `.env.example` to `.env`
 1. Run the app in the development mode `npm start`.
 1. Open [http://localhost:3000](http://localhost:3000) to view it full screen in the browser.
-1. You can see in the file `samples/embedded-chat/index.html` how to embedded the chat into your page.
+1. It is possible to see in the file `samples/embedded-chat/index.html` how to embedded the chat into your page.
 
 <span  style="color:#660000">Please note this app is only the UI, you need implement the back-end app to connect to the NLU service.<span>
 
@@ -45,4 +45,4 @@ In the `src/styles/colors.css` you can customize the colors of your chat.
 
 ---
 
-😃 If you liked this project and used it in yout chatbot please let me know!
+😃 If you like this project and used it in yout chatbot please let me know!
